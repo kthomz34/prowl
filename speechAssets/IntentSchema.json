@@ -1,6 +1,9 @@
 {
   "intents": [
     {
+      "intent": "AlexaMeetUpNumbers" 
+    },
+    {
       "intent": "Hello"
     },
     {
