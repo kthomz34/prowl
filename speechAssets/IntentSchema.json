@@ -1,7 +1,20 @@
 {
   "intents": [
     {
-      "intent": "AlexaMeetUpNumbers" 
+      "intent": "AlexaMeetUpNumbers"
+    },
+    {
+      "intent": "AlexaMeetupCityCheck",
+      "slots": [
+        {
+          "name": "USCity",
+          "type": "AMAZON.US_CITY"
+        },
+        {
+          "name": "EuropeanCity",
+          "type": "AMAZON.EUROPE_CITY"
+        }
+      ]
     },
     {
       "intent": "Hello"
