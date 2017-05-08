@@ -10,4 +10,11 @@ AlexaMeetupCityCheck if {EuropeanCity} has an alexa meetup
 AlexaMeetupCityCheck does {USCity} has an alexa meetup
 AlexaMeetupCityCheck does {EuropeanCity} has an alexa meetup
 AlexaMeetupCityCheck check {USCity}
-AlexaMeetupCityCheck check {EuropeanCity} 
+AlexaMeetupCityCheck check {EuropeanCity}
+
+AlexaMeetupOrganizerCheck whos the organizer of the {USCity} alexa meetup
+AlexaMeetupOrganizerCheck whos the organizer of the {EuropeanCity} alexa meetup
+AlexaMeetupOrganizerCheck who is the organizer of the {USCity} alexa meetup
+AlexaMeetupOrganizerCheck who is the organizer of the {EuropeanCity} alexa meetup
+AlexaMeetupOrganizerCheck tell me the organizer of the {USCity} alexa meetup
+AlexaMeetupOrganizerCheck tell me organizer of the {EuropeanCity} alexa meetup

@@ -2,14 +2,14 @@ var alexaMeetups = [
   {
     "city": "Appleton",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Peter Bailen"
     ]
   },
   {
     "city": "Berlin",
     "country": "Germany",
-    "organisers": [
+    "organizers": [
       "Tilmann Böhme",
       "Stefan Ostwald"
     ]
@@ -17,7 +17,7 @@ var alexaMeetups = [
   {
     "city": "Boston",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Joel Evans",
       "Evan Dorfman"
     ]
@@ -25,7 +25,7 @@ var alexaMeetups = [
   {
     "city": "Columbus",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Bryant Schuck",
       "Stuart Crane"
     ]
@@ -33,7 +33,7 @@ var alexaMeetups = [
   {
     "city": "Dublin",
     "country": "Ireland",
-    "organisers": [
+    "organizers": [
       "Ronan OC",
       "Jason O'Con­aill"
     ]
@@ -41,28 +41,28 @@ var alexaMeetups = [
   {
     "city": "Grand Rapids",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Aaron Kozminski"
     ]
   },
   {
     "city": "Indianapolis",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Dan T"
     ]
   },
   {
     "city": "London",
     "country": "UK",
-    "organisers": [
+    "organizers": [
       "Oscar Merry"
     ]
   },
   {
     "city": "New York",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Brian Donohue",
       "Ruthie Nachmany"
     ]
@@ -70,14 +70,14 @@ var alexaMeetups = [
   {
     "city": "Paris",
     "country": "France",
-    "organisers": [
+    "organizers": [
       "Hicham Tahiri"
     ]
   },
   {
     "city": "Philadelphia",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Chris Myers",
       "Phil Ives"
     ]
@@ -85,7 +85,7 @@ var alexaMeetups = [
   {
     "city": "Pittsburgh",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Chris Maury",
       "Ermine Teves"
     ]
@@ -93,21 +93,21 @@ var alexaMeetups = [
   {
     "city": "Reston",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Ed Water"
     ]
   },
   {
     "city": "San Diego",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Samuel Dieck"
     ]
   },
   {
     "city": "San Francisco",
     "country": "US",
-    "organisers": [
+    "organizers": [
       "Quentin Delaoutre",
       "Maximilien Andile"
     ]
