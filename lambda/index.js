@@ -38,9 +38,24 @@ var handlers = {
       this.emit(':ask', `Ok, ${name}! Tell me what country you're from by saying: I'm from, and then the country you're from.`, 'Tell me what country you\'re from by saying: I\'m from, and then the country you\'re from.');
     }
     else {
-      this.emit(':ask', 'Sorry I didn\t recognise that name. Pleae tell me your name by saying: My name is, and then your name.', 'Pleae tell me your name by saying: My name is, and then your name.');
+      this.emit(':ask', `Sorry, I didn\'t recognise that name!`, `Pleae tell me your name by saying: My name is, and then your name.`, 'Pleae tell me your name by saying: My name is, and then your name.');
     }
+  },
 
+  'CountryCapture': function () {
+    //Get Slot Values
+    var country = this.event.request.intent.slots.Country.value;
+
+    // Get User Name from Session attributes
+    var userName = this.attributes['userName'];
+
+    // Save Country Name in Session Attributes and Ask for Favorite Programming Language
+    if (country) {
+      this.attributes['userCountry'] = country;
+      this.emit(':ask', `Ok ${userName}! Your from ${country}, that's great! You can ask me about the various alexa meetups around the world. What would you like to do?`, 'What would you like to do?');
+    } else {
+      this.emit(':ask', `Sorry, I didn\'t recognise that country!`, `Please tell me what country you\'re from by saying: I\'m from, and then the country you\'re from.`);
+    }
   },
 
   'AlexaMeetUpNumbers': function () {
@@ -57,11 +72,9 @@ var handlers = {
     var city;
     if (USCitySlot) {
       city = USCitySlot;
-    }
-    else if (EuropeanCitySlot) {
+    } else if (EuropeanCitySlot) {
       city = EuropeanCitySlot;
-    }
-    else {
+    } else {
       this.emit(':ask', 'Sorry, I didn\'t recognise that city name.', 'How can I help?');
     }
 
@@ -76,8 +89,7 @@ var handlers = {
     // Respond to User
     if (cityMatch !== '') {
       this.emit(':ask', `Yes! ${city} has an Alexa developer meetup!`, 'How can I help?');
-    }
-    else {
+    } else {
       this.emit(':ask', `Sorry, looks like ${city} doesn't have an Alexa developer meetup yet - why don't you start one?`, 'How can I help?');
     }
 
@@ -92,11 +104,9 @@ var handlers = {
     var city;
     if (USCitySlot) {
       city = USCitySlot;
-    }
-    else if (EuropeanCitySlot) {
+    } else if (EuropeanCitySlot) {
       city = EuropeanCitySlot;
-    }
-    else {
+    } else {
       this.emit(':ask', 'Sorry, I didn\'t recognise that city name.', 'How can I help?');
     }
 
@@ -115,13 +125,10 @@ var handlers = {
       // 1 organizers
       if (cityOrganizers.length === 1) {
         this.emit(':ask', `The organizer of the ${city} Alexa developer meetup is ${cityOrganizers[0]}.`, 'How can I help?');
-      }
-      // Multiple organizers
-      else {
+      } else { // Multiple organizers
         this.emit(':ask', `The organizers of the ${city} Alexa developer meetup are ${convertArrayToReadableString(cityOrganizers)}`, 'How can I help?');
       }
-    }
-    else {
+    } else {
       this.emit(':ask', `Sorry, looks like ${city} doesn't have an Alexa developer meetup yet - why don't you start one?`, 'How can I help?');
     }
 

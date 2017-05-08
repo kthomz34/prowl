@@ -17,3 +17,6 @@ AlexaMeetupOrganizerCheck tell me organizer of the {EuropeanCity} alexa meetup
 
 NameCapture my name is {USFirstName}
 NameCapture my name is {UKFirstName}
+
+CountryCapture I am from {Country}
+CountryCapture I'm from {Country}
