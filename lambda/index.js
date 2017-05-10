@@ -8,6 +8,7 @@ var convertArrayToReadableString = require('./helpers/convertArrayToReadableStri
 
 exports.handler = function(event, context, callback){
   var alexa = Alexa.handler(event, context);
+  alexa.dynamoDBTableName = 'GroupFinderUsers';
   alexa.registerHandlers(handlers);
   alexa.execute();
 };
@@ -15,7 +16,14 @@ exports.handler = function(event, context, callback){
 var handlers = {
 
   'NewSession': function () {
-    this.emit(':ask', 'Welcome to Group Finder, The skill that gives you information about the alexa developer community. You can ask me about the various alexa meetups around the world. But first, I\'d like to get to know you better. Tell me your name by saying: My name is, and then your name.', 'Tell me your name by saying: My name is, and then your name.');
+    // Check for User Data in Session Attributes
+    var userName = this.attributes['userName'];
+    if (userName) {
+      // Welcome User back by Name
+      this.emit(':ask', `Welcome back ${userName}! You can ask me about the various alexa meetups around the world.`, 'What would you like to do');
+    } else {
+      this.emit(':ask', 'Welcome to Group Finder, The skill that gives you information about the alexa developer community. You can ask me about the various alexa meetups around the world. But first, I\'d like to get to know you better. Tell me your name by saying: My name is, and then your name.', 'Tell me your name by saying: My name is, and then your name.');
+    }
   },
 
   'NameCapture': function () {
@@ -27,8 +35,7 @@ var handlers = {
     var name;
     if (USFirstNameSlot) {
       name = USFirstNameSlot;
-    }
-    else if (UKFirstNameSlot) {
+    } else if (UKFirstNameSlot) {
       name = UKFirstNameSlot;
     }
 
@@ -36,8 +43,7 @@ var handlers = {
     if (name) {
       this.attributes['userName'] = name;
       this.emit(':ask', `Ok, ${name}! Tell me what country you're from by saying: I'm from, and then the country you're from.`, 'Tell me what country you\'re from by saying: I\'m from, and then the country you\'re from.');
-    }
-    else {
+    } else {
       this.emit(':ask', `Sorry, I didn\'t recognise that name!`, `Pleae tell me your name by saying: My name is, and then your name.`, 'Pleae tell me your name by saying: My name is, and then your name.');
     }
   },
@@ -132,6 +138,21 @@ var handlers = {
       this.emit(':ask', `Sorry, looks like ${city} doesn't have an Alexa developer meetup yet - why don't you start one?`, 'How can I help?');
     }
 
+  },
+
+  'AMAZON.StopIntent': function () {
+    // State Automatically Saved with :tell
+    this.emit(':tell', 'Goodbye');
+  },
+
+  'AMAZON.CancelIntent': function () {
+    // State Automatically Saved with :tell
+    this.emit(':tell', 'Goodbye');
+  },
+
+  'SessionEndedRequest': function () {
+    // Forces State to Save when the user times out
+    this.emit('savedState', true);
   }
 
 };
