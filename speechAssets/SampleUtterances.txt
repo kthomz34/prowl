@@ -14,9 +14,3 @@ AlexaMeetupOrganizerCheck who is the organizer of the {USCity} alexa meetup
 AlexaMeetupOrganizerCheck who is the organizer of the {EuropeanCity} alexa meetup
 AlexaMeetupOrganizerCheck tell me the organizer of the {USCity} alexa meetup
 AlexaMeetupOrganizerCheck tell me organizer of the {EuropeanCity} alexa meetup
-
-NameCapture my name is {USFirstName}
-NameCapture my name is {UKFirstName}
-
-CountryCapture I am from {Country}
-CountryCapture I'm from {Country}
