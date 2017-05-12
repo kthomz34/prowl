@@ -45,7 +45,7 @@ var onboardingStateHandlers = Alexa.CreateStateHandler(constants.states.ONBOARDI
           });
       } else {
         // Account Not Linked
-        this.emit(':tellWithLinkAccountCard', `Please link your account to use this skill. I\'ve sent the details to your alexa account.`);
+        this.emit(':tellWithLinkAccountCard', `Please link your account to use this skill. I\'ve sent the details to your alexa app.`);
       }
     }
 
@@ -68,7 +68,7 @@ var onboardingStateHandlers = Alexa.CreateStateHandler(constants.states.ONBOARDI
 
   'AMAZON.HelpIntent': function () {
     // Account not Linked
-    this.emit(':tellWithLinkAccountCard', `Please link your account to use this skill. I\'ve sent the details to your alexa account.`);
+    this.emit(':tellWithLinkAccountCard', `Please link your account to use this skill. I\'ve sent the details to your alexa app.`);
   },
 
   'Unhandled': function () {
