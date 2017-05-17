@@ -1,7 +1,7 @@
 var constants = Object.freeze({
 
-  // App ID TODO: Set Your App ID
-  appId: '',
+
+  appId: 'amzn1.ask.skill.8ade3603-32d7-447c-b2ba-1f1a7b654341',
 
   // DynamoDB Table Name
   dynamoDBTableName : 'GroupFinderUsers',
