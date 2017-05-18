@@ -59,11 +59,7 @@ var mainStateHandlers = Alexa.CreateStateHandler(constants.states.MAIN, {
     // Respond to User
     if (cityMatch) {
 
-      // Get Access Token from Alexa request
-      var accessToken = this.event.session.user.accessToken;
-
       // Account Linked
-      if (accessToken) {
         // Get Meetup Group Details from API
         meetupAPI.GetMeetupGroupDetails(accessToken, cityMatch.meetupURL)
           .then((meetupDetails) => {
@@ -85,12 +81,7 @@ var mainStateHandlers = Alexa.CreateStateHandler(constants.states.MAIN, {
             console.log('Meetup API ERROR', error);
             this.emit(':tell', `Sorry, there was a problem accessing your meetup account details.`);
           });
-      } else {
-        // Account Not Linked
-        this.emit(':tellWithLinkAccountCard', `Please link your account to use this skill. I\'ve sent the details to your alexa app.`);
-      }
-    } else {
-      this.emit(':ask', `Sorry, looks like ${(USCitySlot || EuropeanCitySlot)} doesn't have an Alexa developer meetup yet - why don't you start one?`, 'How can I help?');
+      // this.emit(':ask', `Sorry, looks like ${(USCitySlot || EuropeanCitySlot)} doesn't have an Alexa developer meetup yet - why don't you start one?`, 'How can I help?');
     }
   },
 
