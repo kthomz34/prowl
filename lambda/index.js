@@ -24,12 +24,12 @@ var handlers = {
   },
 
   'GetJobs': function () {
-    var jobs = githubAPI.length;
+    var jobs = githubAPI.GetGithubJobs.length;
     this.emit(':ask', `I currently know of ${jobs} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
   },
 
   // TODO implement methods below
-  
+
   // 'CityCheck': function () {
   //   var USCitySlot = this.event.request.intent.slots.USCity.value;
   //   var EuropeanCitySlot = this.event.request.intent.slots.EuropeanCity.value;
