@@ -1,17 +1,5 @@
 var constants = Object.freeze({
-
-
-  appId: 'amzn1.ask.skill.8ade3603-32d7-447c-b2ba-1f1a7b654341',
-
-  // DynamoDB Table Name
-  dynamoDBTableName : 'GroupFinderUsers',
-
-  // Skill States
-  states: {
-    ONBOARDING: '',
-    MAIN: '_MAIN'
-  }
-
+  appId: 'amzn1.ask.skill.b5cffee7-c568-4826-a2be-489902761c92',
 });
 
 module.exports = constants;

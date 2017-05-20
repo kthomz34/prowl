@@ -1,10 +1,10 @@
 {
   "intents": [
     {
-      "intent": "AlexaMeetUpNumbers"
+      "intent": "GetJobs"
     },
     {
-      "intent": "AlexaMeetupCityCheck",
+      "intent": "CityCheck",
       "slots": [
         {
           "name": "USCity",
@@ -17,33 +17,7 @@
       ]
     },
     {
-      "intent": "AlexaMeetupMembersCheck",
-      "slots": [
-        {
-          "name": "USCity",
-          "type": "AMAZON.US_CITY"
-        },
-        {
-          "name": "EuropeanCity",
-          "type": "AMAZON.EUROPE_CITY"
-        }
-      ]
-    },
-    {
-      "intent": "AlexaNextMeetupCheck",
-      "slots": [
-        {
-          "name": "USCity",
-          "type": "AMAZON.US_CITY"
-        },
-        {
-          "name": "EuropeanCity",
-          "type": "AMAZON.EUROPE_CITY"
-        }
-      ]
-    },
-    {
-      "intent": "AlexaMeetupOrganizerCheck",
+      "intent": "GetJobsByCity",
       "slots": [
         {
           "name": "USCity",

@@ -1,6 +1,6 @@
-var alexaMeetups = require('../data/alexaMeetups');
+var githubCities = require('../data/githubCities');
 
-module.exports = function checkMeetupCity(USCitySlot, EuropeanCitySlot) {
+module.exports = function checkgithubCity(USCitySlot, EuropeanCitySlot) {
 
   // Get city
   var city;
@@ -12,9 +12,9 @@ module.exports = function checkMeetupCity(USCitySlot, EuropeanCitySlot) {
 
   // Check for our city
   var cityMatch = false;
-  for (var i = 0; i < alexaMeetups.length; i++) {
-    if (alexaMeetups[i].city.toLowerCase() === city.toLowerCase()){
-      cityMatch = alexaMeetups[i];
+  for (var i = 0; i < githubCities.length; i++) {
+    if (githubCities[i].city.toLowerCase() === city.toLowerCase()){
+      cityMatch = githubCities[i];
     }
   }
 
