@@ -7,6 +7,7 @@ var constants =  require('./constants/constants');
 // //Helpers
 // var convertArrayToReadableString = require('../helpers/convertArrayToReadableString');
 var githubAPI = require('./helpers/githubAPI');
+
 // var checkMeetupCity = require('../helpers/checkMeetupCity');
 // var alexaDateUtil = require('../helpers/alexaDateUtil')
 
@@ -28,10 +29,10 @@ var handlers = {
     var jobsArray = [];
 
     for (var x in jobs) {
-      jobsArray.push(parsed[x]);
+      jobsArray.push(jobs[x]);
     }
 
-    this.emit(':ask', `I currently know of ${jobsArray} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
+    this.emit(':ask', `I currently know of ${jobsArray.length} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
   },
 
   // TODO implement methods below
