@@ -24,8 +24,14 @@ var handlers = {
   },
 
   'GetJobs': function () {
-    var jobs = githubAPI.GetGithubJobs.length;
-    this.emit(':ask', `I currently know of ${jobs} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
+    var jobs = githubAPI.GetGithubJobs;
+    var jobsArray = [];
+
+    for (var x in jobs) {
+      jobsArray.push(parsed[x]);
+    }
+
+    this.emit(':ask', `I currently know of ${jobsArray} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
   },
 
   // TODO implement methods below
