@@ -17,7 +17,7 @@
       ]
     },
     {
-      "intent": "GetJobsByCity",
+      "intent": "GetJobByCity",
       "slots": [
         {
           "name": "USCity",
