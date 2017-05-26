@@ -12,9 +12,9 @@ module.exports = {
           'Content-Type': 'application/json'
         }
       })
-      .then(function(body) {
+      .then(function(response) {
         // Return Jobs Details
-        resolve(JSON.parse(body));
+        resolve(JSON.parse(response));
       })
       .catch(function(error) {
         // API Error
@@ -44,26 +44,26 @@ module.exports = {
   //   });
   // },
 
-  // GetGithubJobsByLocation: (description, location) => {
-  //   return new Promise((resolve, reject) => {
-  //     // Call Github Jobs API
-  //     request({
-  //       url: "https://jobs.github.com/positions.json?description="+"&location="+ location,
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     })
-  //     .then((response) => {
-  //       // Return Jobs Details
-  //       resolve(JSON.parse(response));
-  //     })
-  //     .catch((error) => {
-  //       // API Error
-  //       reject('Github Jobs API Error: ', error);
-  //     });
-  //   });
-  // },
+  GetGithubJobsByLocation: function (location) {
+    return new Promise(function(resolve, reject) {
+      // Call Github Jobs API
+      request({
+        url: "https://jobs.github.com/positions.json?description="+"&location="+location,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(function(response) {
+        // Return Jobs Details
+        resolve(JSON.parse(response));
+      })
+      .catch(function(error) {
+        // API Error
+        reject('Github Jobs API Error: ', error);
+      });
+    });
+  },
 
   // GetGithubJobsByDescriptionLocation: (description, location) => {
   //   return new Promise((resolve, reject) => {
