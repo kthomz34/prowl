@@ -25,14 +25,17 @@ var handlers = {
   },
 
   'GetJobs': function () {
-    var jobs = githubAPI.GetGithubJobs;
-    var jobsArray = [];
+    githubAPI.GetGithubJobs().then((jobs) => {
+      var jobsArray = [];
 
-    for (var x in jobs) {
-      jobsArray.push(jobs[x]);
-    }
+      for (var x in jobs) {
+        jobsArray.push(jobs[x]);
+      }
 
-    this.emit(':ask', `I currently know of ${jobsArray.length} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
+      this.emit(':ask', `I currently know of ${jobsArray.length} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
+    }).catch((error) => {
+      this.emit(':ask', `There was an ${error}`, 'How else can I help?');
+    });
   },
 
   // TODO implement methods below
