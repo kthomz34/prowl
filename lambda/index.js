@@ -26,7 +26,11 @@ var handlers = {
 
   'GetJobs': function () {
     githubAPI.GetGithubJobs().then((jobs) => {
-      this.emit(':ask', `I currently know of about ${Object.keys(jobs).length} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
+      if (Object.keys(jobs).length === 1) {
+        this.emit(':ask', `I currently know of ${Object.keys(jobs).length} job. Check to see if the city you want to work in has a job!`, 'How else can I help?');
+      } else {
+        this.emit(':ask', `I currently know of about ${Object.keys(jobs).length} jobs. Check to see if the city you want to work in has a job!`, 'How else can I help?');
+      }
     }).catch((error) => {
       console.log("github jobs API Error")
       this.emit(':tell', `There was an ${error}`, 'How else can I help?');
@@ -47,8 +51,11 @@ var handlers = {
     }
 
     githubAPI.GetGithubJobsByLocation(location).then((jobs) => {
-      console.log(Object.keys(jobs));
-      this.emit(':ask', `I currently know of about ${Object.keys(jobs).length} jobs in ${location}.`, 'How else can I help?');
+      if (Object.keys(jobs).length === 1) {
+        this.emit(':ask', `I currently know of ${Object.keys(jobs).length} job in ${location}.`, 'How else can I help?');
+      } else {
+        this.emit(':ask', `I currently know of ${Object.keys(jobs).length} jobs in ${location}.`, 'How else can I help?');
+      }
     }).catch((error) => {
       console.log("github jobs API Error")
       this.emit(':tell', `There was an ${error}`, 'How else can I help?');
