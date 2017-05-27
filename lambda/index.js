@@ -2,13 +2,11 @@ var Alexa = require('alexa-sdk');
 
 // Constants
 var constants =  require('./constants/constants');
-// Data
 
 // //Helpers
-// var convertArrayToReadableString = require('../helpers/convertArrayToReadableString');
 var githubAPI = require('./helpers/githubAPI');
-
-// var checkMeetupCity = require('../helpers/checkMeetupCity');
+var checkCity = require('./helpers/checkCity');
+// var convertArrayToReadableString = require('../helpers/convertArrayToReadableString');
 // var alexaDateUtil = require('../helpers/alexaDateUtil')
 
 exports.handler = function(event, context, callback){
@@ -41,15 +39,9 @@ var handlers = {
     var USCitySlot = this.event.request.intent.slots.USCity.value;
     var EuropeanCitySlot = this.event.request.intent.slots.EuropeanCity.value;
     // Get city
-    var location;
-    if (USCitySlot) {
-      location = USCitySlot;
-    } else if (EuropeanCitySlot) {
-      location = EuropeanCitySlot;
-    } else {
-      this.emit(':ask', 'Sorry, I didn\'t recognise that city name.', 'How can I help?');
-    }
+    var location = checkCity(USCitySlot, EuropeanCitySlot);
 
+    // Respond to User
     githubAPI.GetGithubJobsByLocation(location).then((jobs) => {
       if (Object.keys(jobs).length === 1) {
         this.emit(':ask', `I currently know of ${Object.keys(jobs).length} job in ${location}.`, 'How else can I help?');
@@ -65,16 +57,11 @@ var handlers = {
   'GetJobTypeByCity': function () {
     var USCitySlot = this.event.request.intent.slots.USCity.value;
     var EuropeanCitySlot = this.event.request.intent.slots.EuropeanCity.value;
-    // Get city
-    var location;
-    if (USCitySlot) {
-      location = USCitySlot;
-    } else if (EuropeanCitySlot) {
-      location = EuropeanCitySlot;
-    } else {
-      this.emit(':ask', 'Sorry, I didn\'t recognise that city name.', 'How can I help?');
-    }
 
+    // Get city
+    var location = checkCity(USCitySlot, EuropeanCitySlot);
+
+    // Get Job
     var jobType = this.event.request.intent.slots.JobType.value;
     var description;
     if (jobType) {
@@ -83,6 +70,7 @@ var handlers = {
       this.emit(':ask', 'Sorry, I didn\'t recognise that job type.', 'How can I help?');
     }
 
+    // Respond to User
     githubAPI.GetGithubJobsByDescriptionLocation(description, location).then((jobs) => {
       if (Object.keys(jobs).length === 1) {
         this.emit(':ask', `There is currently ${Object.keys(jobs).length} ${description} job in ${location}.`, 'How else can I help?');
