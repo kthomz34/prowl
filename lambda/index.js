@@ -62,36 +62,38 @@ var handlers = {
     });
   },
 
-  // TODO implement methods below
+  'GetJobTypeByCity': function () {
+    var USCitySlot = this.event.request.intent.slots.USCity.value;
+    var EuropeanCitySlot = this.event.request.intent.slots.EuropeanCity.value;
+    // Get city
+    var location;
+    if (USCitySlot) {
+      location = USCitySlot;
+    } else if (EuropeanCitySlot) {
+      location = EuropeanCitySlot;
+    } else {
+      this.emit(':ask', 'Sorry, I didn\'t recognise that city name.', 'How can I help?');
+    }
 
-  // 'GetJobsByCity': function () {
-  //   var USCitySlot = this.event.request.intent.slots.USCity.value;
-  //   var EuropeanCitySlot = this.event.request.intent.slots.EuropeanCity.value;
-  //
-  //   // Get city
-  //   var city;
-  //   if (USCitySlot) {
-  //     city = USCitySlot;
-  //   } else if (EuropeanCitySlot) {
-  //     city = EuropeanCitySlot;
-  //   } else {
-  //     this.emit(':ask', 'Sorry, I didn\'t recognise that city name.', 'How can I help?');
-  //   }
-  //
-  //   // Check for our city
-  //   var cityMatch = '';
-  //   for (var i = 0; i < alexaMeetups.length; i++) {
-  //     if (alexaMeetups[i].city.toLowerCase() === city.toLowerCase()){
-  //       cityMatch = alexaMeetups[i].city;
-  //     }
-  //   }
-  //
-  //   if (cityMatch !== '') {
-  //     this.emit(':ask, `There are currently ${} jobs in ${}`, How else can I help?');
-  //   } else {
-  //     this.emit(':ask', `Sorry, looks like there are no developer jobs in ${city}.`, 'How else can I help?');
-  //   }
-  // },
+    var jobType = this.event.request.intent.slots.JobType.value;
+    var description;
+    if (jobType) {
+      description = jobType
+    } else {
+      this.emit(':ask', 'Sorry, I didn\'t recognise that job type.', 'How can I help?');
+    }
+
+    githubAPI.GetGithubJobsByDescriptionLocation(description, location).then((jobs) => {
+      if (Object.keys(jobs).length === 1) {
+        this.emit(':ask', `There is currently ${Object.keys(jobs).length} ${description} job in ${location}.`, 'How else can I help?');
+      } else {
+        this.emit(':ask', `There are currently ${Object.keys(jobs).length} ${description} jobs in ${location}.`, 'How else can I help?');
+      }
+    }).catch((error) => {
+      console.log("github jobs API Error")
+      this.emit(':tell', `There was an ${error}`, 'How else can I help?');
+    });
+  },
 
   'AMAZON.StopIntent': function () {
     // State Automatically Saved with :tell

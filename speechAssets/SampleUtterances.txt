@@ -2,28 +2,28 @@ GetJobs Alexa ask prowl to check how many jobs there are
 GetJobs Alexa ask prowl to see how many jobs there are
 GetJobs Alexa ask prowl how many jobs there are
 
-CityCheck Alexa ask prowl to check how many developer jobs there are in {USCity}
-CityCheck Alexa ask prowl to check how many developer jobs there are in {EuropeanCity}
-CityCheck Alexa ask prowl to see how many developer jobs there are in {USCity}
-CityCheck Alexa ask prowl to see how many developer jobs there are in {EuropeanCity}
-CityCheck Alexa ask prowl how many developer jobs there are in {USCity}
-CityCheck Alexa ask prowl how many developer jobs there are in {EuropeanCity}
-CityCheck Alexa ask prowl to check how many developer jobs are in {USCity}
-CityCheck Alexa ask prowl to check how many developer jobs are in {EuropeanCity}
-CityCheck Alexa ask prowl to see how many developer jobs are in {USCity}
-CityCheck Alexa ask prowl to see how many developer jobs are in {EuropeanCity}
-CityCheck Alexa ask prowl how many developer jobs are in {USCity}
-CityCheck Alexa ask prowl how many developer jobs are in {EuropeanCity}
+CityCheck Alexa ask prowl to check how many jobs there are in {USCity}
+CityCheck Alexa ask prowl to check how many jobs there are in {EuropeanCity}
+CityCheck Alexa ask prowl to see how many jobs there are in {USCity}
+CityCheck Alexa ask prowl to see how many jobs there are in {EuropeanCity}
+CityCheck Alexa ask prowl how many jobs there are in {USCity}
+CityCheck Alexa ask prowl how many jobs there are in {EuropeanCity}
+CityCheck Alexa ask prowl to check how many jobs are in {USCity}
+CityCheck Alexa ask prowl to check how many jobs are in {EuropeanCity}
+CityCheck Alexa ask prowl to see how many jobs are in {USCity}
+CityCheck Alexa ask prowl to see how many jobs are in {EuropeanCity}
+CityCheck Alexa ask prowl how many jobs are in {USCity}
+CityCheck Alexa ask prowl how many jobs are in {EuropeanCity}
 
-GetJobByCity Alexa ask prowl to check how many jobs there are in {USCity}
-GetJobByCity Alexa ask prowl to check how many jobs there are in {EuropeanCity}
-GetJobByCity Alexa ask prowl to see how many jobs there are in {USCity}
-GetJobByCity Alexa ask prowl to see how many jobs there are in {EuropeanCity}
-GetJobByCity Alexa ask prowl how many jobs there are in {USCity}
-GetJobByCity Alexa ask prowl how many jobs there are in {EuropeanCity}
-GetJobByCity Alexa ask prowl to check how many jobs are in {USCity}
-GetJobByCity Alexa ask prowl to check how many jobs are in {EuropeanCity}
-GetJobByCity Alexa ask prowl to see how many jobs are in {USCity}
-GetJobByCity Alexa ask prowl to see how many jobs are in {EuropeanCity}
-GetJobByCity Alexa ask prowl how many jobs are in {USCity}
-GetJobByCity Alexa ask prowl how many jobs are in {EuropeanCity}
+GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs there are in {USCity}
+GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs there are in {EuropeanCity}
+GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs there are in {USCity}
+GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs there are in {EuropeanCity}
+GetJobTypeByCity Alexa ask prowl how many {JobType} jobs there are in {USCity}
+GetJobTypeByCity Alexa ask prowl how many {JobType} jobs there are in {EuropeanCity}
+GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs are in {USCity}
+GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs are in {EuropeanCity}
+GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs are in {USCity}
+GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs are in {EuropeanCity}
+GetJobTypeByCity Alexa ask prowl how many {JobType} jobs are in {USCity}
+GetJobTypeByCity Alexa ask prowl how many {JobType} jobs are in {EuropeanCity}

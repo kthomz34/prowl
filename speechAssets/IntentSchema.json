@@ -17,7 +17,7 @@
       ]
     },
     {
-      "intent": "GetJobByCity",
+      "intent": "GetJobTypeByCity",
       "slots": [
         {
           "name": "USCity",
@@ -26,6 +26,10 @@
         {
           "name": "EuropeanCity",
           "type": "AMAZON.EUROPE_CITY"
+        },
+        {
+          "name": "JobType",
+          "type": "DEVELOPER_JOBS"
         }
       ]
     },

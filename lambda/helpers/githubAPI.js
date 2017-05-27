@@ -23,27 +23,6 @@ module.exports = {
     });
   },
 
-  // GetGithubJobsByDescription: (description) => {
-  //   return new Promise((resolve, reject) => {
-  //     // Call Github Jobs API
-  //     request({
-  //       url: "https://jobs.github.com/positions.json?description="+ description,
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     })
-  //     .then((response) => {
-  //       // Return Jobs Details
-  //       resolve(JSON.parse(response));
-  //     })
-  //     .catch((error) => {
-  //       // API Error
-  //       reject('Github Jobs API Error: ', error);
-  //     });
-  //   });
-  // },
-
   GetGithubJobsByLocation: function (location) {
     return new Promise(function(resolve, reject) {
       // Call Github Jobs API
@@ -65,11 +44,11 @@ module.exports = {
     });
   },
 
-  // GetGithubJobsByDescriptionLocation: (description, location) => {
+  // GetGithubJobsByDescription: (description) => {
   //   return new Promise((resolve, reject) => {
   //     // Call Github Jobs API
   //     request({
-  //       url: "https://jobs.github.com/positions.json?description="+ description +"&location="+ location,
+  //       url: "https://jobs.github.com/positions.json?description="+ description,
   //       method: 'GET',
   //       headers: {
   //         'Content-Type': 'application/json'
@@ -84,5 +63,26 @@ module.exports = {
   //       reject('Github Jobs API Error: ', error);
   //     });
   //   });
-  // }
+  // },
+
+  GetGithubJobsByDescriptionLocation: (description, location) => {
+    return new Promise((resolve, reject) => {
+      // Call Github Jobs API
+      request({
+        url: "https://jobs.github.com/positions.json?description="+description+"&location="+location,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then((response) => {
+        // Return Jobs Details
+        resolve(JSON.parse(response));
+      })
+      .catch((error) => {
+        // API Error
+        reject('Github Jobs API Error: ', error);
+      });
+    });
+  }
 };
