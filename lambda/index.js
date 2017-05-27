@@ -6,6 +6,7 @@ var constants =  require('./constants/constants');
 // //Helpers
 var githubAPI = require('./helpers/githubAPI');
 var checkCity = require('./helpers/checkCity');
+var checkJob = require('./helpers/checkJob');
 // var convertArrayToReadableString = require('../helpers/convertArrayToReadableString');
 // var alexaDateUtil = require('../helpers/alexaDateUtil')
 
@@ -55,20 +56,16 @@ var handlers = {
   },
 
   'GetJobTypeByCity': function () {
+    // Slots
     var USCitySlot = this.event.request.intent.slots.USCity.value;
     var EuropeanCitySlot = this.event.request.intent.slots.EuropeanCity.value;
+    var jobType = this.event.request.intent.slots.JobType.value;
 
     // Get city
     var location = checkCity(USCitySlot, EuropeanCitySlot);
 
     // Get Job
-    var jobType = this.event.request.intent.slots.JobType.value;
-    var description;
-    if (jobType) {
-      description = jobType
-    } else {
-      this.emit(':ask', 'Sorry, I didn\'t recognise that job type.', 'How can I help?');
-    }
+    var description = checkJob(jobType);
 
     // Respond to User
     githubAPI.GetGithubJobsByDescriptionLocation(description, location).then((jobs) => {
