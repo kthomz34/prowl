@@ -7,8 +7,7 @@ var constants =  require('./constants/constants');
 var githubAPI = require('./helpers/githubAPI');
 var checkCity = require('./helpers/checkCity');
 var checkJob = require('./helpers/checkJob');
-// var convertArrayToReadableString = require('../helpers/convertArrayToReadableString');
-// var alexaDateUtil = require('../helpers/alexaDateUtil')
+var convertArrayToReadableString = require('./helpers/convertArrayToReadableString');
 
 exports.handler = function(event, context, callback){
   var alexa = Alexa.handler(event, context);
@@ -24,6 +23,7 @@ var handlers = {
   },
 
   'GetJobs': function () {
+    // Respond to User
     githubAPI.GetGithubJobs().then((jobs) => {
       if (Object.keys(jobs).length === 1) {
         this.emit(':ask', `I currently know of ${Object.keys(jobs).length} job. Check to see if the city you want to work in has a job!`, 'How else can I help?');
@@ -79,6 +79,43 @@ var handlers = {
       this.emit(':tell', `There was an ${error}`, 'How else can I help?');
     });
   },
+
+  'GetCompanyByJobTypeCity': function () {
+    // Slots
+    var USCitySlot = this.event.request.intent.slots.USCity.value;
+    var EuropeanCitySlot = this.event.request.intent.slots.EuropeanCity.value;
+    var jobType = this.event.request.intent.slots.JobType.value;
+
+    // Get city
+    var location = checkCity(USCitySlot, EuropeanCitySlot);
+
+    // Get Job
+    var description = checkJob(jobType);
+
+    // Respond to User
+    githubAPI.GetGithubJobsByDescriptionLocation(description, location).then((jobs) => {
+
+      // Get Companies Offering Jobs
+      var companies = [];
+
+      for (i = 0; i < jobs.length; i++) {
+        companies.push(jobs[i].company);
+      }
+      // Convert Companies to readable list
+      var companyList = convertArrayToReadableString(companies);
+
+      if (Object.keys(jobs).length === 1) {
+        this.emit(':ask', `${companyList} is offering a ${description} job in ${location}.`, 'How else can I help?');
+      } else {
+        this.emit(':ask', `Currently, ${companyList} are offering ${description} jobs in ${location}.`, 'How else can I help?');
+      }
+    }).catch((error) => {
+      console.log("github jobs API Error")
+      this.emit(':tell', `There was an ${error}`, 'How else can I help?');
+    });
+  },
+
+  // getting an array of objects back. Prompt user to sample results of companies. jobs.first.title
 
   'AMAZON.StopIntent': function () {
     // State Automatically Saved with :tell

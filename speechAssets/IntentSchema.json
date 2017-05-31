@@ -34,6 +34,23 @@
       ]
     },
     {
+      "intent": "GetCompanyByJobTypeCity",
+      "slots": [
+        {
+          "name": "USCity",
+          "type": "AMAZON.US_CITY"
+        },
+        {
+          "name": "EuropeanCity",
+          "type": "AMAZON.EUROPE_CITY"
+        },
+        {
+          "name": "JobType",
+          "type": "DEVELOPER_JOBS"
+        }
+      ]
+    },
+    {
       "intent": "AMAZON.StopIntent"
     },
     {

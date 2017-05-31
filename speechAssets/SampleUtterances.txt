@@ -27,3 +27,6 @@ GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs are in {USCity}
 GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs are in {EuropeanCity}
 GetJobTypeByCity Alexa ask prowl how many {JobType} jobs are in {USCity}
 GetJobTypeByCity Alexa ask prowl how many {JobType} jobs are in {EuropeanCity}
+
+GetCompanyByJobTypeCity Alexa ask prowl to tell me the companies offering {JobType} jobs in {USCity}
+GetCompanyByJobTypeCity Alexa ask prowl to tell me the companies offering {JobType} jobs in {EuropeanCity}
