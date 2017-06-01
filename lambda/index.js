@@ -8,6 +8,7 @@ var githubAPI = require('./helpers/githubAPI');
 var checkCity = require('./helpers/checkCity');
 var checkJob = require('./helpers/checkJob');
 var convertArrayToReadableString = require('./helpers/convertArrayToReadableString');
+var onlyUnique = require('./helpers/onlyUnique');
 
 exports.handler = function(event, context, callback){
   var alexa = Alexa.handler(event, context);
@@ -101,8 +102,11 @@ var handlers = {
       for (i = 0; i < jobs.length; i++) {
         companies.push(jobs[i].company);
       }
+
+      // Get a Unique array
+      var uniqueCompanies = companies.filter(onlyUnique);
       // Convert Companies to readable list
-      var companyList = convertArrayToReadableString(companies);
+      var companyList = convertArrayToReadableString(uniqueCompanies);
 
       if (Object.keys(jobs).length === 1) {
         this.emit(':ask', `${companyList} is offering a ${description} job in ${location}.`, 'How else can I help?');
