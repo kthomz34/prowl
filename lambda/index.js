@@ -20,7 +20,7 @@ exports.handler = function(event, context, callback){
 var handlers = {
 
   'NewSession': function () {
-      this.emit(':ask', `Welcome to prowl. You can ask to seek the various developer jobs on the web!`, 'What would you like to do');
+      this.emit(':ask', `Welcome to github jobs. You can ask to seek the various developer jobs on the web!`, 'What would you like to do');
   },
 
   'GetJobs': function () {

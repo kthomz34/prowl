@@ -1,32 +1,38 @@
-GetJobs Alexa ask prowl to check how many jobs there are
-GetJobs Alexa ask prowl to see how many jobs there are
-GetJobs Alexa ask prowl how many jobs there are
+GetJobs Alexa ask github jobs to check how many jobs there are
+GetJobs Alexa ask github jobs to see how many jobs there are
+GetJobs Alexa ask github jobs how many jobs there are
 
-CityCheck Alexa ask prowl to check how many jobs there are in {USCity}
-CityCheck Alexa ask prowl to check how many jobs there are in {EuropeanCity}
-CityCheck Alexa ask prowl to see how many jobs there are in {USCity}
-CityCheck Alexa ask prowl to see how many jobs there are in {EuropeanCity}
-CityCheck Alexa ask prowl how many jobs there are in {USCity}
-CityCheck Alexa ask prowl how many jobs there are in {EuropeanCity}
-CityCheck Alexa ask prowl to check how many jobs are in {USCity}
-CityCheck Alexa ask prowl to check how many jobs are in {EuropeanCity}
-CityCheck Alexa ask prowl to see how many jobs are in {USCity}
-CityCheck Alexa ask prowl to see how many jobs are in {EuropeanCity}
-CityCheck Alexa ask prowl how many jobs are in {USCity}
-CityCheck Alexa ask prowl how many jobs are in {EuropeanCity}
+CityCheck Alexa ask github jobs to check how many jobs there are in {USCity}
+CityCheck Alexa ask github jobs to check how many jobs there are in {EuropeanCity}
+CityCheck Alexa ask github jobs to see how many jobs there are in {USCity}
+CityCheck Alexa ask github jobs to see how many jobs there are in {EuropeanCity}
+CityCheck Alexa ask github jobs how many jobs there are in {USCity}
+CityCheck Alexa ask github jobs how many jobs there are in {EuropeanCity}
+CityCheck Alexa ask github jobs to check how many jobs are in {USCity}
+CityCheck Alexa ask github jobs to check how many jobs are in {EuropeanCity}
+CityCheck Alexa ask github jobs to see how many jobs are in {USCity}
+CityCheck Alexa ask github jobs to see how many jobs are in {EuropeanCity}
+CityCheck Alexa ask github jobs how many jobs are in {USCity}
+CityCheck Alexa ask github jobs how many jobs are in {EuropeanCity}
 
-GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs there are in {USCity}
-GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs there are in {EuropeanCity}
-GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs there are in {USCity}
-GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs there are in {EuropeanCity}
-GetJobTypeByCity Alexa ask prowl how many {JobType} jobs there are in {USCity}
-GetJobTypeByCity Alexa ask prowl how many {JobType} jobs there are in {EuropeanCity}
-GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs are in {USCity}
-GetJobTypeByCity Alexa ask prowl to check how many {JobType} jobs are in {EuropeanCity}
-GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs are in {USCity}
-GetJobTypeByCity Alexa ask prowl to see how many {JobType} jobs are in {EuropeanCity}
-GetJobTypeByCity Alexa ask prowl how many {JobType} jobs are in {USCity}
-GetJobTypeByCity Alexa ask prowl how many {JobType} jobs are in {EuropeanCity}
+GetJobTypeByCity Alexa ask github jobs to check how many {JobType} jobs there are in {USCity}
+GetJobTypeByCity Alexa ask github jobs to check how many {JobType} jobs there are in {EuropeanCity}
+GetJobTypeByCity Alexa ask github jobs to see how many {JobType} jobs there are in {USCity}
+GetJobTypeByCity Alexa ask github jobs to see how many {JobType} jobs there are in {EuropeanCity}
+GetJobTypeByCity Alexa ask github jobs how many {JobType} jobs there are in {USCity}
+GetJobTypeByCity Alexa ask github jobs how many {JobType} jobs there are in {EuropeanCity}
+GetJobTypeByCity Alexa ask github jobs to check how many {JobType} jobs are in {USCity}
+GetJobTypeByCity Alexa ask github jobs to check how many {JobType} jobs are in {EuropeanCity}
+GetJobTypeByCity Alexa ask github jobs to see how many {JobType} jobs are in {USCity}
+GetJobTypeByCity Alexa ask github jobs to see how many {JobType} jobs are in {EuropeanCity}
+GetJobTypeByCity Alexa ask github jobs how many {JobType} jobs are in {USCity}
+GetJobTypeByCity Alexa ask github jobs how many {JobType} jobs are in {EuropeanCity}
 
-GetCompanyByJobTypeCity Alexa ask prowl to tell me the companies offering {JobType} jobs in {USCity}
-GetCompanyByJobTypeCity Alexa ask prowl to tell me the companies offering {JobType} jobs in {EuropeanCity}
+GetCompanyByJobTypeCity Alexa ask github jobs to tell me the companies offering {JobType} jobs in {USCity}
+GetCompanyByJobTypeCity Alexa ask github jobs to tell me the companies offering {JobType} jobs in {EuropeanCity}
+GetCompanyByJobTypeCity Alexa ask github jobs what companies are offering {JobType} jobs in {USCity}
+GetCompanyByJobTypeCity Alexa ask github jobs what companies are offering {JobType} jobs in {EuropeanCity}
+GetCompanyByJobTypeCity Alexa ask github jobs to see what companies are offering {JobType} jobs in {USCity}
+GetCompanyByJobTypeCity Alexa ask github jobs to see what companies are offering {JobType} jobs in {EuropeanCity}
+GetCompanyByJobTypeCity Alexa ask github jobs to check what companies are offering {JobType} jobs in {USCity}
+GetCompanyByJobTypeCity Alexa ask github jobs to check what companies are offering {JobType} jobs in {EuropeanCity}
